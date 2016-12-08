@@ -1,6 +1,5 @@
 package sonvh.webservice.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,21 +10,23 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "user")
-@XmlType(name="user")
-public class user implements Serializable {
+@XmlType(name = "user")
+public class User {
 
-	
-	@XmlElement(name="id")
+	@XmlElement(name = "id")
 	private int id;
-	@XmlElement(name="name")
+	@XmlElement(name = "name")
 	private String name;
-	@XmlElement(name="birth")
+	@XmlElement(name = "birth")
 	private Date birth;
+	@XmlElement(name = "group")
+	private Group group;
 
 	// bat buoc phai co contruction nay
-	public user() {
+	public User() {
 	}
-	public user(int it, String name, Date date) {
+
+	public User(int it, String name, Date date) {
 
 		setId(it);
 		setName(name);
@@ -56,5 +57,12 @@ public class user implements Serializable {
 		this.birth = birth;
 	}
 
+	public Group getGroup() {
+		return group;
+	}
+
+	public void setGroup(Group group) {
+		this.group = group;
+	}
 
 }
